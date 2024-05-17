@@ -113,6 +113,8 @@ function setup(){
       maze_config = parseInt(ms)  
       maze_timer = 0
       time = 0
+      time_tick_counter = 0
+      connection.publish('maze_timer', '0')
       connection.publish('maze_timer', '0')
     }                            
     
@@ -137,15 +139,6 @@ function setup(){
     
     if(topic == "maze_state"){ 
       maze_state = ms.toString() 
-
-      if(maze_state == checkpoint){
-        maze_timer = 0
-        time = 0
-        time_tick = 0
-        time_tick_counter = 0
-        connection.publish('maze_timer', '0') 
-      }
-
 
       if(maze_state == "return"){
         death_sound.setVolume(0.5)
