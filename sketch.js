@@ -115,7 +115,6 @@ function setup(){
       time = 0
       time_tick_counter = 0
       connection.publish('maze_timer', '0')
-      connection.publish('maze_timer', '0')
     }                            
     
     if(topic == "maze_id"){
